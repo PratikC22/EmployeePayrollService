@@ -27,7 +27,6 @@ public class EmployeePayRollService {
         employeePayRollService.writeEmployeePayuRollData(IOService.CONSOLE_IO);
     }
 
-
     //Create Method for Reading the Employee PayRoll Data From Console
     private void readEmployeePayRollData(Scanner consoleInputReader) {
         System.out.println("Enter The Employee ID: ");
@@ -39,7 +38,6 @@ public class EmployeePayRollService {
         double salary = consoleInputReader.nextDouble();
         employeePayRollList.add(new EmployeePayRollData(id,name,salary));    //Adding Employee PaYRoll to ArrayList
     }
-
 
     //Create Method for Writing the Employee PayRoll Data In Console
     public void writeEmployeePayuRollData(EmployeePayRollService.IOService ioService) {

@@ -15,7 +15,7 @@ public class NIOFileAPITest {
     private static String PLAY_WITH_NIO = "TempPlayGround";
 
     /**
-     * create Method for Checking the Directory Exists or Not. If exists Delete the
+     * Create Method for Checking the Directory Exists or Not. If exists Delete the
      * Directory and again Creating directory. In Directory Creating Files in Range
      * and Printing the Path of Directory and Files.
      */

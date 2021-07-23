@@ -21,11 +21,14 @@ public class Java8WatchServiceExample {
 
     //Register the given Directory with the Watch services;
     private void registerDirWatchers(Path dir) throws IOException {
-        WatchKey key = dir.register(watcher, ENTRY_CREATE, ENTRY_DELETE,ENTRY_MODIFY);
-        dirWatchers.put(key , dir);
+        WatchKey key = dir.register(watcher, ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY);
+        dirWatchers.put(key, dir);
     }
 
-    //Register the given directory and all its sub-directories,
+    /**
+     * Register the given directory and all its sub-directories,
+     * with the WatchService.
+     */
     private void scanAndRegisterDirectories(final Path start) throws IOException {
         //register directory and sub-directories
         Files.walkFileTree(start, new SimpleFileVisitor<Path>() {
@@ -39,7 +42,7 @@ public class Java8WatchServiceExample {
 
     //All events for keys queued to the watchers
     void processEvents() {
-        while(true) {
+        while (true) {
             WatchKey key;  //wait for key to be signalled
             try {
                 key = watcher.take();
@@ -47,12 +50,13 @@ public class Java8WatchServiceExample {
                 return;
             }
             Path dir = dirWatchers.get(key);
-            if (dir == null )continue;;
+            if (dir == null) continue;
+            ;
             for (WatchEvent<?> event : key.pollEvents()) {
                 WatchEvent.Kind kind = event.kind();
                 Path name = ((WatchEvent<Path>) event).context();
                 Path child = dir.resolve(name);
-                System.out.format("%s: %s\n", event.kind().name(),child); //print out event
+                System.out.format("%s: %s\n", event.kind().name(), child); //print out event
 
                 // if directory is created, then register it and its sub-directories
                 if (kind == ENTRY_CREATE) {

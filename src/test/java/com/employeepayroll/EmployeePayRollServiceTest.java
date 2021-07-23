@@ -1,5 +1,6 @@
 package com.employeepayroll;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -17,5 +18,8 @@ public class EmployeePayRollServiceTest {
         };
         EmployeePayRollService employeePayRollService = new EmployeePayRollService(Arrays.asList(arrayOfEmployees));
         employeePayRollService.writeEmployeePayuRollData(EmployeePayRollService.IOService.FILE_IO);
+        employeePayRollService.printData(EmployeePayRollService.IOService.FILE_IO);
+        long entries = employeePayRollService.countEntries(EmployeePayRollService.IOService.FILE_IO);
+        Assertions.assertEquals(3,entries);
     }
 }
