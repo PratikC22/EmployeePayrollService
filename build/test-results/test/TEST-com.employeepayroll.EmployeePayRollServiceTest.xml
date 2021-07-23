@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.employeepayroll.EmployeePayRollServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-07-22T15:05:04" hostname="LAPTOP-7G42B0N6" time="0.038">
+  <properties/>
+  <testcase name="given3EmployeeWhenWrittenToFilesShouldMatchEmployeeEntries()" classname="com.employeepayroll.EmployeePayRollServiceTest" time="0.038"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -12,7 +12,7 @@ public class Java8WatchServiceExample {
     private final WatchService watcher;
     private final Map<WatchKey, Path> dirWatchers;
 
-    //Creates a WatchService and registers the given Directory
+    //creates a WatchService and registers the given Directory
     Java8WatchServiceExample(Path dir) throws IOException {
         this.watcher = FileSystems.getDefault().newWatchService();
         this.dirWatchers = new HashMap<WatchKey, Path>();
@@ -25,7 +25,7 @@ public class Java8WatchServiceExample {
         dirWatchers.put(key , dir);
     }
 
-    //Register the given directory and all its sub-directories with the WatchService.
+    //Register the given directory and all its sub-directories,
     private void scanAndRegisterDirectories(final Path start) throws IOException {
         //register directory and sub-directories
         Files.walkFileTree(start, new SimpleFileVisitor<Path>() {

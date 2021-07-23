@@ -1,0 +1,3 @@
+Id = 1 , Name = abc , salary = 60000.0
+Id = 2 , Name = xyz , salary = 75000.0
+Id = 3 , Name = pqr , salary = 50000.0

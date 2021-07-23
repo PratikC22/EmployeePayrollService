@@ -6,7 +6,6 @@ public class EmployeePayRollData {
     public String name;
     public double salary;
 
-
     //Create Constructor for Initializing the Variables
     public EmployeePayRollData(int id, String name, double salary) {
         this.id = id;
@@ -17,6 +16,6 @@ public class EmployeePayRollData {
     //Printing the Result OverRide
     @Override
     public String toString () {
-        return "Id = " +id+ "\n Name = " +name+ "\n salary = " +salary;
+        return "Id = " +id+ " , Name = " +name+ " , salary = " +salary;
     }
 }
